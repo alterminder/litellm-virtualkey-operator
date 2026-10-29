@@ -1,0 +1,4 @@
+## Append samples of your project ##
+resources:
+- litellm_v1alpha1_virtualkey.yaml
+# +kubebuilder:scaffold:manifestskustomizesamples

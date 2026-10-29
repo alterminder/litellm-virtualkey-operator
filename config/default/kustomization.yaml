@@ -1,0 +1,10 @@
+namespace: litellm
+namePrefix: litellm-virtualkey-operator-
+
+resources:
+- ../crd
+- ../rbac
+- ../manager
+
+# +kubebuilder:scaffold:crdkustomizecainjectionns
+# +kubebuilder:scaffold:crdkustomizecainjectionname

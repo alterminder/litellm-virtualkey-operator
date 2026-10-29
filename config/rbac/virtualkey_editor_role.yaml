@@ -1,0 +1,33 @@
+# This rule is not used by the project litellm-virtualkey-operator itself.
+# It is provided to allow the cluster admin to help manage permissions for users.
+#
+# Grants permissions to create, update, and delete resources within the litellm.alter.lab.
+# This role is intended for users who need to manage these resources
+# but should not control RBAC or manage permissions for others.
+
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: litellm-virtualkey-operator
+    app.kubernetes.io/managed-by: kustomize
+  name: virtualkey-editor-role
+rules:
+- apiGroups:
+  - litellm.alter.lab
+  resources:
+  - virtualkeys
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - litellm.alter.lab
+  resources:
+  - virtualkeys/status
+  verbs:
+  - get

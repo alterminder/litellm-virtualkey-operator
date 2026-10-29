@@ -1,0 +1,18 @@
+apiVersion: litellm.alter.lab/v1alpha1
+kind: VirtualKey
+metadata:
+  labels:
+    app.kubernetes.io/name: litellm-virtualkey-operator
+    app.kubernetes.io/managed-by: kustomize
+  name: example-key
+spec:
+  alias: example-key
+  secretRef:
+    name: example-litellm-key
+    key: API_KEY
+  models:
+    - gpt-4o-mini
+  userID: example-user
+  metadata:
+    owner: example-team
+    purpose: example

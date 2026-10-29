@@ -1,0 +1,41 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: manager-role
+  namespace: litellm
+rules:
+- apiGroups:
+  - ""
+  resources:
+  - secrets
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - litellm.alter.lab
+  resources:
+  - virtualkeys
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - litellm.alter.lab
+  resources:
+  - virtualkeys/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - litellm.alter.lab
+  resources:
+  - virtualkeys/status
+  verbs:
+  - get
+  - patch
+  - update
